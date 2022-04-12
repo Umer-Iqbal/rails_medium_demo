@@ -72,3 +72,9 @@ group :test do
 end
 
 gem "pg", "~> 1.3"
+
+
+#Devise gem
+gem 'devise'
+# Active Admin gem
+gem 'activeadmin'
