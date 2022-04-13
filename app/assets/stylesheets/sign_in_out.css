@@ -1,0 +1,20 @@
+.sign_in_out_div{
+
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    width:30%;
+    border: 1px solid black;
+}
+
+.left{
+    /*border: 1px solid red;*/
+    margin: auto;
+    text-align: left;
+    width:50%;
+}
+
+.signup_input_field_width{
+    width:90%;
+    margin-bottom: 5px;
+}
