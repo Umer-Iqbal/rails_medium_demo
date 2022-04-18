@@ -81,3 +81,7 @@ gem "pg", "~> 1.3"
 gem 'activeadmin'
 
 gem "devise", "~> 4.8"
+
+gem 'pagy', '~> 5.10' # omit patch digit
+
+gem 'ransack'

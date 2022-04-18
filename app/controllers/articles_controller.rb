@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = Article.all
-  end
+  include Pagy::Backend
 
+  def index
+    @q = Article.ransack(params[:q])
+    @pagy, @articles = pagy(@q.result, items: 4)
+  end
 end
