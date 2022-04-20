@@ -73,11 +73,8 @@ end
 
 gem "pg", "~> 1.3"
 
+#new gems -------
 
-#Devise gem -------
-
-
-# Active Admin gem
 gem 'activeadmin'
 
 gem "devise", "~> 4.8"
