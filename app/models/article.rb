@@ -1,10 +1,7 @@
 class Article < ApplicationRecord
-  has_one_attached :images
+  has_one_attached :image
   belongs_to :user
   has_many :comments
-  has_many :admin_topics_lists
 
-  validates :title, presence: true
-  validates :body, presence: true
-
+  validates :title, :body, presence: true
 end
