@@ -1,57 +1,18 @@
-  <div class="index-main-div">
-    <div class="row" >
-      <div class="d-none d-xl-block col-xl-1 col-xxl-2   ">
-
-        <div class="index_nevegation_bar">
-            <%= link_to root_path do %>
-              <% image_tag("medium_icon.png") %>
-            <% end %>
-
-          <div class="links justify-content-around">
-            <%= link_to  root_path do %>
-              <span class="w3-xlarge fa fa-home "></span>
-            <% end %>
-
-            <%= link_to user_path(current_user) do %>
-              <span class="w3-xlarge fas fa-folder-open"></span>
-            <% end %>
-
-            <%= link_to root_path do%>
-              <span class="w3-xlarge fa fa-user"></span>
-            <% end %>
-            <hr>
-            <%= link_to root_path do %>
-              <span class="w3-xlarge far fa-edit" ></span>
-            <% end %>
-          </div>
-
-          <%= link_to root_path, class:"login_user_image" do %>
-            <% if current_user.avatar.attached? %>
-              <%= image_tag current_user.avatar %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="d-none d-xl-block col-xl-8 col-xxl-7 border-start border-end justify-content-center ">
-        <%= render "layouts/index_article_div" %>
-      </div>
-
-      <div class="d-xl-none  col-sm-12 justify-content-center ">
-        <%= render "layouts/index_article_div" %>
-      </div>
-
-      <div class="d-none d-xl-block col-xl-3 ">
-        <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete }, class:"mt-5" %>
-        <%= render "layouts/article_search" %>
-      </div>
+<div class="index-main-div">
+  <div class="row">
+    <div class="d-none d-xl-block col-xl-1 col-xxl-2   ">
+      <%= render "layouts/full_screen_navagation_bar" %>
     </div>
-    <%= render "layouts/small_screen_nevagation_bar" %>
+    <div class="d-none d-xl-block col-xl-8 col-xxl-7 border-start border-end justify-content-center ">
+      <%= render "layouts/index_article_div" %>
+    </div>
+    <div class="d-xl-none  col-sm-12 justify-content-center ">
+      <%= render "layouts/index_article_div" %>
+    </div>
+    <div class="d-none d-xl-block col-xl-3 ">
+      <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "mt-5" %>
+      <%= render "layouts/article_search" %>
+    </div>
   </div>
-
-
-
-
-
-
-
+  <%= render "layouts/small_screen_nevagation_bar" %>
+</div>

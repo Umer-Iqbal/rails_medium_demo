@@ -5,7 +5,7 @@
       <div class="d-flex">
         <div class="user_image_div">
           <% if article.user.avatar.attached? %>
-            <%= image_tag article.user.avatar.representation(resize_to_limit:[20, 20]) %>
+            <%= image_tag article.user.avatar.representation(resize_to_limit: [20, 20]), height: 20 %>
           <% end %>
         </div>
         <div class="user_name_div">
@@ -15,7 +15,6 @@
           . <%= article.created_at.strftime("%b %d,%Y") %>
         </div>
       </div>
-
       <div class="article_and_image_reper_div mt-2 d-none d-md-flex">
         <div class="index_article">
           <div class="index_article_title_div">
@@ -27,11 +26,10 @@
         </div>
         <div class="index_article_image d-none d-md-block">
           <% if article.user.avatar.attached? %>
-            <%= image_tag article.user.avatar.representation(resize_to_limit:[200, 100]) %>
+            <%= image_tag article.user.avatar.representation(resize_to_limit: [200, 100]) %>
           <% end %>
         </div>
       </div>
-
       <div class="small-screen-article-and-image-reper_div mt-2 d-md-none">
         <div class="index_article">
           <div class="small-screen-index-article-title_div">
@@ -43,7 +41,7 @@
         </div>
         <div class="index-small-screen-article_image">
           <% if article.user.avatar.attached? %>
-            <%= image_tag article.user.avatar.representation(resize_to_limit:[200, 100]) %>
+            <%= image_tag article.user.avatar.representation(resize_to_limit: [200, 100]) %>
           <% end %>
         </div>
       </div>
