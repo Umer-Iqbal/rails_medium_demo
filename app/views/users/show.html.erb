@@ -1,25 +1,7 @@
 <div class="container-fluid index-container-fluid">
   <div class="row" style="width: 100%">
     <div class="d-none d-xl-block col-xl-1 col-xxl-2   ">
-      <div class="index_nevegation_bar">
-        <div class="index_medium_logo"  >
-          <%=  image_tag src="medium_icon.png" %>
-        </div>
-
-        <div class="links justify-content-around">
-          <%= link_to "", root_path, class:"w3-xlarge fa fa-home td-non" %>
-          <%= link_to "", user_path(current_user.id), class:"w3-xlarge fas fa-folder-open td-non" %>
-          <%= link_to "", root_path, class:"w3-xlarge fa fa-user td-non" %>
-          <hr>
-          <%= link_to "", root_path, class:"w3-xlarge far fa-edit td-non"%>
-        </div>
-
-        <div class="login_user_image" >
-          <% if current_user.avatar.representable? %>
-            <%= image_tag current_user.avatar %>
-          <% end %>
-        </div>
-      </div>
+      <%= render "layouts/full_screen_nevagation_bar" %>
     </div>
 
     <div class="d-none d-xl-block col-xl-8 col-xxl-7 border-start border-end justify-content-center ">
@@ -37,8 +19,8 @@
                 </div>
               </div>
               <div class="index_article_image">
-                <% if article.user.avatar.representable? %>
-                  <%= image_tag article.user.avatar.representation(resize_to_limit:[200, 100]) %>
+                <% if article.thumbnail.representable? %>
+                  <%= image_tag article.thumbnail.representation(resize_to_limit:[200, 100]) %>
                 <% end %>
               </div>
             </div>

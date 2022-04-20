@@ -1,0 +1,12 @@
+.new-article-form-title{
+    border-radius: 5px;
+    border: 1px solid;
+    height: 50px;
+    width: 100%;
+}
+.new-article-form-button{
+    padding-top: 2%;
+}
+.new-article-action-text{
+    padding-top: 5%;
+}

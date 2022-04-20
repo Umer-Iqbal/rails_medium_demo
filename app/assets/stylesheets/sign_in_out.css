@@ -1,5 +1,4 @@
 .sign_in_out_div{
-
     margin: auto;
     margin-top: 50px;
     text-align: center;
@@ -8,7 +7,6 @@
 }
 
 .left{
-    /*border: 1px solid red;*/
     margin: auto;
     text-align: left;
     width:50%;

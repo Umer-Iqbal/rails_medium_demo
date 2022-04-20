@@ -15,38 +15,39 @@
           . <%= article.created_at.strftime("%b %d,%Y") %>
         </div>
       </div>
+      <%= link_to article_path(article.id) do  %>
+        <div class="article_and_image_reper_div mt-2 d-none d-md-flex">
+          <div class="index_article">
+            <div class="index_article_title_div">
+              <h2 class="index_article_title"><%= article.title %></h2>
+            </div>
+            <div class="index_article_body_div d-none d-md-block">
+              <p class="index_article_body"><%= article.body %></p>
+            </div>
+          </div>
+          <div class="index_article_image d-none d-md-block">
+            <% if article.thumbnail.representable? %>
+              <%= image_tag article.thumbnail.representation(resize_to_limit:[200, 100]) %>
+            <% end %>
+          </div>
+        </div>
 
-      <div class="article_and_image_reper_div mt-2 d-none d-md-flex">
-        <div class="index_article">
-          <div class="index_article_title_div">
-            <h2 class="index_article_title"><%= article.title %></h2>
+        <div class="small-screen-article-and-image-reper_div mt-2 d-md-none">
+          <div class="index_article">
+            <div class="small-screen-index-article-title_div">
+              <h2 class="small-screen-index-article-title"><%= article.title %></h2>
+            </div>
+            <div class="index_article_body_div d-none ">
+              <p class="index_article_body"><%= article.body %></p>
+            </div>
           </div>
-          <div class="index_article_body_div d-none d-md-block">
-            <p class="index_article_body"><%= article.body %></p>
-          </div>
-        </div>
-        <div class="index_article_image d-none d-md-block">
-          <% if article.user.avatar.representable? %>
-            <%= image_tag article.user.avatar.representation(resize_to_limit:[200, 100]) %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="small-screen-article-and-image-reper_div mt-2 d-md-none">
-        <div class="index_article">
-          <div class="small-screen-index-article-title_div">
-            <h2 class="small-screen-index-article-title"><%= article.title %></h2>
-          </div>
-          <div class="index_article_body_div d-none ">
-            <p class="index_article_body"><%= article.body %></p>
+          <div class="index-small-screen-article_image">
+            <% if article.thumbnail.representable? %>
+              <%= image_tag article.thumbnail.representation(resize_to_limit:[200, 100]) %>
+            <% end %>
           </div>
         </div>
-        <div class="index-small-screen-article_image">
-          <% if article.user.avatar.representable? %>
-            <%= image_tag article.user.avatar.representation(resize_to_limit:[200, 100]) %>
-          <% end %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </ul>
 <% end %>

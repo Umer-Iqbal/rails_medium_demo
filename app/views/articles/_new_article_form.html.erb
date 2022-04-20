@@ -1,0 +1,17 @@
+<%= form_with model: @article do |form| %>
+  <div class="field">
+    <%= form.text_field :title, placeholder:" Title", class:" new-article-form-title" %>
+  </div>
+  <div class="field new-article-action-text">
+    <%= form.file_field :thumbnail %>
+  </div>
+  <div>
+    <div class="field new-article-action-text">
+      <%= form.rich_text_area :body, placeholder:"Body"%>
+    </div>
+  </div>
+
+  <div class="actions new-article-form-button">
+    <%= form.submit %>
+  </div>
+<% end %>
