@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  include Pagy::Backend
 
   def index
     @q = Article.ransack(params[:q])

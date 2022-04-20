@@ -2,9 +2,9 @@
   <ul>
     <div class="homepage_article_div">
       <hr>
-      <div class="index_article_header">
+      <div class="d-flex">
         <div class="user_image_div">
-          <% if article.user.avatar.representable? %>
+          <% if article.user.avatar.attached? %>
             <%= image_tag article.user.avatar.representation(resize_to_limit:[20, 20]) %>
           <% end %>
         </div>
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="index_article_image d-none d-md-block">
-          <% if article.user.avatar.representable? %>
+          <% if article.user.avatar.attached? %>
             <%= image_tag article.user.avatar.representation(resize_to_limit:[200, 100]) %>
           <% end %>
         </div>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="index-small-screen-article_image">
-          <% if article.user.avatar.representable? %>
+          <% if article.user.avatar.attached? %>
             <%= image_tag article.user.avatar.representation(resize_to_limit:[200, 100]) %>
           <% end %>
         </div>
@@ -50,3 +50,6 @@
     </div>
   </ul>
 <% end %>
+<div class="index_pagy_nave ">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

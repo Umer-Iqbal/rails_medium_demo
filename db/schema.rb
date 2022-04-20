@@ -45,10 +45,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_14_060453) do
   create_table "admin_topics_lists", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_admin_topics_lists_on_admin_id"
   end
 
   create_table "admins", force: :cascade do |t|
@@ -93,7 +91,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_14_060453) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "admin_topics_lists", "admins"
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
