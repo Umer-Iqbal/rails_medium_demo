@@ -1,15 +1,6 @@
 <% @articles.each do |article| %>
     <div class="homepage-article-raper">
       <hr>
-      <div class="d-flex">
-        <% if article.user.avatar.attached? %>
-          <%= image_tag article.user.avatar.representation(resize_to_limit: [20, 20]), class: "b-radius-50", width: 22 %>
-        <% end %>
-        <div class="header-user-name">
-          <%= article.user.username %>
-        </div>
-        . <%= article.created_at.strftime("%b %d,%Y") %>
-      </div>
       <div class="article-image-reper mt-2 d-none d-md-flex">
         <div class="index-article">
           <div class="index-article-title-raper">

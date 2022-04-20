@@ -1,37 +1,13 @@
 <div class="index-main-div">
   <div class="row">
-    <div class="d-none d-xl-block col-xl-1 col-xxl-2   ">
+    <div class="d-none d-xl-block col-xl-1 col-xxl-2">
       <%= render "layouts/full_screen_navagation_bar" %>
     </div>
     <div class="d-none d-xl-block col-xl-8 col-xxl-7 border-start border-end justify-content-center ">
-      <% @articles.each do |article| %>
-        <ul>
-          <div class="homepage_article_div">
-            <hr>
-            <div class="article_and_image_reper_div mt-2">
-              <div class="index_article">
-                <div class="index_article_title_div">
-                  <h2 class="index_article_title"><%= article.title %></h2>
-                </div>
-                <div class="index_article_body_div">
-                  <p class="index_article_body"><%= article.body %></p>
-                </div>
-              </div>
-              <div class="index_article_image">
-                <% if article.user.avatar.attached? %>
-                  <%= image_tag article.user.avatar.representation(resize_to_limit: [200, 100]) %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </ul>
-      <% end %>
-      <div class="index_pagy_nave ">
-        <%== pagy_bootstrap_nav(@pagy) %>
-      </div>
+      <%= render "users/users_article" %>
     </div>
     <div class="d-xl-none  col-sm-12 justify-content-center ">
-      <%= render "layouts/index_article_div" %>
+      <%= render "users/users_article" %>
     </div>
     <div class="d-none d-xl-block col-xl-3 ">
       <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "mt-5" %>
