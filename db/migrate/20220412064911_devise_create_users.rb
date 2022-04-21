@@ -15,8 +15,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.datetime :remember_created_at
 
       ##new columns------
-      add_column :users, :description, :string
-      add_column :users, :username, :string
+      t.string :description
+      t.string :username
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
