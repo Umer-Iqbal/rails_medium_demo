@@ -1,3 +1,0 @@
-class AdminTopicsList < ApplicationRecord
-
-end
