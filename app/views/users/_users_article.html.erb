@@ -11,8 +11,8 @@
           </div>
         </div>
         <div class="index-article-image d-none d-md-block">
-          <% if article.user.avatar.attached? %>
-            <%= image_tag article.user.avatar.representation(resize_to_limit: [200, 100]) %>
+          <% if article.thumbnail.attached? %>
+            <%= image_tag article.thumbnail.representation(resize_to_limit: [200, 100]) %>
           <% end %>
         </div>
       </div>
@@ -26,8 +26,8 @@
           </div>
         </div>
         <div class="index-small-screen-article-image">
-          <% if article.user.avatar.attached? %>
-            <%= image_tag article.user.avatar.representation(resize_to_limit: [200, 100]) %>
+          <% if article.thumbnail.attached? %>
+            <%= image_tag article.thumbnail.representation(resize_to_limit: [200, 100]) %>
           <% end %>
         </div>
       </div>

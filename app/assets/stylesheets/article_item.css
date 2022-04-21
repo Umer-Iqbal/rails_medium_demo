@@ -75,7 +75,7 @@ img {
 
 .index-article-body-raper {
     margin-top: 5px;
-    max-height: 45%;
+    max-height: 43%;
     overflow: hidden;
 }
 
@@ -127,7 +127,8 @@ img {
     border-radius: 50px;
     width: 70%;
 }
-.small-screen-new-article{
+
+.small-screen-new-article {
     padding-left: 6%;
     padding-right: 4%;
 }

@@ -1,17 +1,17 @@
 <%= form_with model: @article do |form| %>
-  <div class="field">
-    <%= form.text_field :title, placeholder:" Title", class:" new-article-form-title" %>
+  <div class="field margin-lrtb">
+    <%= form.text_field :title, placeholder: " Title", class: "new-article-form-title w-100" %>
   </div>
-  <div class="field new-article-action-text">
+  <div class="field margin-lrtb">
+    <%= form.label :"Thumbnail: ", class: "fw-bold" %>
     <%= form.file_field :thumbnail %>
   </div>
   <div>
-    <div class="field new-article-action-text">
-      <%= form.rich_text_area :body, placeholder:"Body"%>
+    <div class="field margin-lrtb">
+      <%= form.rich_text_area :body, placeholder: "Body" %>
     </div>
   </div>
-
-  <div class="actions new-article-form-button">
+  <div class="actions margin-lrtb">
     <%= form.submit %>
   </div>
 <% end %>
