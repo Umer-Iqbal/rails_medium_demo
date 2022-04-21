@@ -1,61 +1,33 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-<h1><%= current_user.id %></h1>
-<h1><%= current_user.articles %></h1>
-
-
-
 <div class="container-fluid index-container-fluid">
   <div class="row" style="width: 100%">
     <div class="col-sm-2 d-flex flex-row-reverse ">
-
       <div class="index_nevegation_bar">
-        <div class="index_medium_logo"  >
-          <%=  image_tag src="medium_icon.png" %>
+        <div class="index_medium_logo">
+          <%= image_tag "medium_icon.png" %>
         </div>
-
         <div class="links justify-content-around">
-          <%= link_to "", root_path, class:"w3-xlarge fa fa-home td-non" %>
-          <%= link_to "", user_path(current_user.id), class:"w3-xlarge fas fa-folder-open td-non" %>
-          <%= link_to "", root_path, class:"w3-xlarge fa fa-user td-non" %>
+          <%= link_to "", root_path, class: "w3-xlarge fa fa-home td-non" %>
+          <%= link_to "", user_path(current_user.id), class: "w3-xlarge fas fa-folder-open td-non" %>
+          <%= link_to "", root_path, class: "w3-xlarge fa fa-user td-non" %>
           <hr>
-          <%= link_to "", root_path, class:"w3-xlarge far fa-edit td-non"%>
+          <%= link_to "", root_path, class: "w3-xlarge far fa-edit td-non" %>
         </div>
-
-
-        <div class="login_user_image" >
+        <div class="login_user_image">
           <% if current_user.avatar.representable? %>
             <%= image_tag current_user.avatar %>
           <% end %>
         </div>
       </div>
     </div>
-
     <div class="col-sm-7 border-start border-end justify-content-center ">
-      <!--        <div class="index_article_title_div mt-5">-->
-      <!--          <h2 class="index_article_title">Articles:</h2>-->
-      <!--        </div>-->
       <%= render "layouts/index_article_div" %>
       <div class="index_pagy_nave ">
         <%== pagy_bootstrap_nav(@pagy) %>
       </div>
-
     </div>
     <div class="col-sm-3 ">
-      <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete }, class:"mt-5" %>
-
-      <!--            <input type="search" class="form-control index-search-bar mt-5" id="datatable-search-input", placeholder="search">-->
-
+      <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "mt-5" %>
       <%= render "layouts/article_search" %>
-
     </div>
   </div>
-
 </div>
-
-
-
-
-
-
-

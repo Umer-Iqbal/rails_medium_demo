@@ -1,0 +1,25 @@
+<div class="index-nevegation-bar">
+  <%= link_to root_path do %>
+    <% image_tag("medium_icon.png") %>
+  <% end %>
+  <div class="links justify-content-around">
+    <%= link_to root_path do %>
+      <span class="w3-xlarge fa fa-home "></span>
+    <% end %>
+    <%= link_to user_path(current_user.id) do %>
+      <span class="w3-xlarge fas fa-folder-open"></span>
+    <% end %>
+    <%= link_to root_path do %>
+      <span class="w3-xlarge fa fa-user"></span>
+    <% end %>
+    <hr>
+    <%= link_to root_path do %>
+      <span class="w3-xlarge far fa-edit"></span>
+    <% end %>
+  </div>
+  <%= link_to root_path, class: "login-user-image" do %>
+    <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar %>
+    <% end %>
+  <% end %>
+</div>

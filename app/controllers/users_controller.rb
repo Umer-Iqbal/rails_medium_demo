@@ -1,21 +1,9 @@
 class UsersController < ApplicationController
-  include Pagy::Backend
-
-  def index
-    # @articles = Article.all
-
-    # Article.ransack(params[:q])
-    # @pagy, @articles = pagy(@q.result, items: 4)
-
-    # @pagy, @articles = pagy(Article.all, items: 4)
-    # debugger
-  end
 
   def show
     @userArticles = User.find(params[:id]).articles
     @q = @userArticles.ransack(params[:q])
     @pagy, @articles = pagy(@q.result, items: 4)
-    # debugger
   end
 
   def new

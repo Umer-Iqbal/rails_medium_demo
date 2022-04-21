@@ -72,10 +72,6 @@ group :test do
 end
 
 gem "pg", "~> 1.3"
-
-#new gems -------
-
-gem 'activeadmin'
 gem "devise", "~> 4.8"
 gem 'pagy', '~> 5.10' # omit patch digit
 gem 'ransack'
