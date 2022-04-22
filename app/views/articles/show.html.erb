@@ -1,10 +1,13 @@
 <div class="index-main-div">
   <div class="row">
-    <div class="d-none d-xl-block col-xl-1 col-xxl-2   ">
+    <div class="d-none d-xl-block col-xl-1 col-xxl-2">
       <%= render "layouts/full_screen_navagation_bar" %>
     </div>
     <div class="col-sm-12 d-xl-block col-xl-8 col-xxl-7 border-start border-end justify-content-center ">
-      <%= render "layouts/index_article_div" %>
+      <div class="margin-lrtb">
+        <h3 class="index-article-title"><%= @article.title %></h3>
+        <%= @article.body %>
+      </div>
     </div>
     <div class="d-none d-xl-block col-xl-3 ">
       <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "mt-5" %>

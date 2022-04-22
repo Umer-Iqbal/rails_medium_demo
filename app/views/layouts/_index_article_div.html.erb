@@ -11,12 +11,12 @@
       . <%= article.created_at.strftime("%b %d,%Y") %>
     </div>
     <div class="article-image-reper mt-2 d-none d-md-flex">
-      <div class="index-article">
-          <h2 class="index-article-title index-article-title-raper"><%= article.title %></h2>
+      <a class="index-article" target="_blank" href="<%= article_path(article) %>">
+        <h2 class="index-article-title index-article-title-raper"><%= article.title %></h2>
         <div class="index-article-body-raper d-none d-md-block">
           <p class="index-article-body"><%= article.body %></p>
         </div>
-      </div>
+      </a>
       <div class="index-article-image d-none d-md-block">
         <% if article.thumbnail.representable? %>
           <%= image_tag article.thumbnail.representation(resize_to_limit: [200, 100]) %>

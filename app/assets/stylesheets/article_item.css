@@ -23,7 +23,8 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: auto;
+    margin-left: 10px;
+    position: fixed;
 }
 
 .small-screen-nevegation-bar {
@@ -86,6 +87,7 @@ img {
 }
 
 .index-article {
+    text-decoration: none;
     padding-right: 3px;
     width: 80%;
 }
@@ -132,3 +134,5 @@ img {
     padding-left: 6%;
     padding-right: 4%;
 }
+
+

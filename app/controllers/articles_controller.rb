@@ -22,6 +22,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @q = Article.ransack(params[:q])
+    @pagy, @articles = pagy(@q.result, items: 4)
     @article = Article.find(params[:id])
   end
 
