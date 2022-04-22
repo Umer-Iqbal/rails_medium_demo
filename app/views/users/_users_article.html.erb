@@ -15,6 +15,7 @@
             <%= image_tag article.thumbnail.representation(resize_to_limit: [200, 100]) %>
           <% end %>
         </div>
+        <%= link_to "edit", edit_article_path %>
       </div>
       <div class="small-screen-article-and-image-reper mt-2 d-md-none">
         <div class="index-article">
