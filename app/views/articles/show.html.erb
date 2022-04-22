@@ -7,6 +7,9 @@
       <div class="margin-lrtb">
         <h3 class="index-article-title"><%= @article.title %></h3>
         <%= @article.body %>
+        <%= link_to new_article_comment_path(@article) do %>
+          <div class="border border-secondary">comments</div>
+        <% end %>
       </div>
     </div>
     <div class="d-none d-xl-block col-xl-3 ">

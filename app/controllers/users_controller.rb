@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def article_params
     params.require(:article).permit(:title, :body, images: [])
   end
