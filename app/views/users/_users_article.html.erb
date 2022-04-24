@@ -9,8 +9,8 @@
           <div class="index-article-body-raper d-none d-md-block">
             <p class="index-article-body"><%= article.body %></p>
           </div>
-
-          <%= link_to "edit", edit_article_path(article) %>
+          <%= link_to "Edit", edit_article_path(article) %>
+          <%= link_to "Delete", article_path(article), data:{turbo_method: :delete}  %>
         </div>
         <div class="index-article-image d-none d-md-block">
           <% if article.thumbnail.attached? %>
@@ -26,6 +26,8 @@
           <div class="index-article-body-raper d-none ">
             <p class="index-article-body"><%= article.body %></p>
           </div>
+          <%= link_to "Edit", edit_article_path(article) %>
+          <%= link_to "Delete", article_path(article), data:{turbo_method: :delete} %>
         </div>
         <div class="index-small-screen-article-image">
           <% if article.thumbnail.attached? %>
