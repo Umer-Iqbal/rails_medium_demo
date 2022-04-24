@@ -1,41 +1,41 @@
 <% @articles.each do |article| %>
-    <div class="homepage-article-raper">
-      <hr>
-      <div class="article-image-reper mt-2 d-none d-md-flex">
-        <div class="index-article">
-          <div class="index-article-title-raper">
-            <h2 class="index-article-title"><%= article.title %></h2>
-          </div>
-          <div class="index-article-body-raper d-none d-md-block">
-            <p class="index-article-body"><%= article.body %></p>
-          </div>
-          <%= link_to "Edit", edit_article_path(article) %>
-          <%= link_to "Delete", article_path(article), data:{turbo_method: :delete}  %>
+  <div class="homepage-article-raper">
+    <hr>
+    <div class="article-image-reper mt-2 d-none d-md-flex">
+      <div class="index-article">
+        <div class="index-article-title-raper">
+          <h2 class="index-article-title"><%= article.title %></h2>
         </div>
-        <div class="index-article-image d-none d-md-block">
-          <% if article.thumbnail.attached? %>
-            <%= image_tag article.thumbnail.representation(resize_to_limit: [200, 100]) %>
-          <% end %>
+        <div class="index-article-body-raper d-none d-md-block">
+          <p class="index-article-body"><%= article.body %></p>
         </div>
+        <%= link_to "Edit", edit_article_path(article) %>
+        <%= link_to "Delete", article_path(article), data: { turbo_method: :delete } %>
       </div>
-      <div class="small-screen-article-and-image-reper mt-2 d-md-none">
-        <div class="index-article">
-          <div class="small-screen-index-article-title">
-            <h2 class="small-screen-index-article-title"><%= article.title %></h2>
-          </div>
-          <div class="index-article-body-raper d-none ">
-            <p class="index-article-body"><%= article.body %></p>
-          </div>
-          <%= link_to "Edit", edit_article_path(article) %>
-          <%= link_to "Delete", article_path(article), data:{turbo_method: :delete} %>
-        </div>
-        <div class="index-small-screen-article-image">
-          <% if article.thumbnail.attached? %>
-            <%= image_tag article.thumbnail.representation(resize_to_limit: [200, 100]) %>
-          <% end %>
-        </div>
+      <div class="index-article-image d-none d-md-block">
+        <% if article.thumbnail.attached? %>
+          <%= image_tag article.thumbnail.representation(resize_to_limit: [200, 100]) %>
+        <% end %>
       </div>
     </div>
+    <div class="small-screen-article-and-image-reper mt-2 d-md-none">
+      <div class="index-article">
+        <div class="small-screen-index-article-title">
+          <h2 class="small-screen-index-article-title"><%= article.title %></h2>
+        </div>
+        <div class="index-article-body-raper d-none ">
+          <p class="index-article-body"><%= article.body %></p>
+        </div>
+        <%= link_to "Edit", edit_article_path(article) %>
+        <%= link_to "Delete", article_path(article), data: { turbo_method: :delete } %>
+      </div>
+      <div class="index-small-screen-article-image">
+        <% if article.thumbnail.attached? %>
+          <%= image_tag article.thumbnail.representation(resize_to_limit: [200, 100]) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>
 <div class="index-pagy-nave ">
   <%== pagy_bootstrap_nav(@pagy) %>

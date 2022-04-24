@@ -17,7 +17,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-    debugger
   end
 
   private
