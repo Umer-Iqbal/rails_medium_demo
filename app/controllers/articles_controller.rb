@@ -39,9 +39,9 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    debugger
     @article = Article.find (params[:id])
     @article.destroy
-    debugger
     redirect_to user_path
   end
 
