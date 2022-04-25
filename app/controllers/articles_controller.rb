@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    render layout: "new_article"
   end
 
   def create
@@ -29,19 +30,20 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    render layout: "new_article"
   end
 
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to user_path
+      redirect_to user_path(current_user)
     end
   end
 
   def destroy
-    @article = Article.find (params[:id])
+    @article = current_user.articles.find (params[:id])
     @article.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   end
 
   private
