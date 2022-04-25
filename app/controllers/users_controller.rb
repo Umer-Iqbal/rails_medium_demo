@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def show
-    @userArticles = User.find(params[:id]).articles
+    @q = User.find(params[:id]).articles.ransack(params[:q])
+    @pagy, @userArticles = pagy(@q.result, items: 4)
   end
 
   private
