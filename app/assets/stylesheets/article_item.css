@@ -137,3 +137,6 @@ img {
 .t-decoration{
     text-decoration: none;
 }
+.article_search{
+    position: fixed;
+}

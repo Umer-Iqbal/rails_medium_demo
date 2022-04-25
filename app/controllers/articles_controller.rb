@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
+  before_action :search_article
 
   def index
-    @q = Article.ransack(params[:q])
-    @pagy, @articles = pagy(@q.result, items: 4)
+
   end
 
   def new
@@ -23,8 +23,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @q = Article.ransack(params[:q])
-    @pagy, @articles = pagy(@q.result, items: 4)
     @article = Article.find(params[:id])
   end
 
@@ -50,6 +48,11 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :body, :thumbnail)
+  end
+
+  def search_article
+    @q = Article.ransack(params[:q])
+    @pagy, @articles = pagy(@q.result, items: 4)
   end
 
 end
