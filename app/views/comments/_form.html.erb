@@ -1,0 +1,8 @@
+<%= form_with model: [@article, comment] do |form| %>
+  <div class="field margin-lrtb">
+    <%= form.text_field :body, placeholder: " Place a comment", class: "new-article-form-title w-100" %>
+  </div>
+  <div class="actions margin-lrtb">
+    <% form.submit %>
+  </div>
+<% end %>

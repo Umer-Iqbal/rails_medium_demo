@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
+  before_action :search_article
 
   def index
-    @q = Article.ransack(params[:q])
-    @pagy, @articles = pagy(@q.result, items: 4)
+
   end
 
   def new
     @article = Article.new
+    render layout: "new_article"
   end
 
   def create
@@ -22,9 +23,25 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @q = Article.ransack(params[:q])
-    @pagy, @articles = pagy(@q.result, items: 4)
     @article = Article.find(params[:id])
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+    render layout: "new_article"
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to user_path(current_user)
+    end
+  end
+
+  def destroy
+    @article = current_user.articles.find (params[:id])
+    @article.destroy
+    redirect_to user_path(current_user)
   end
 
   private
@@ -32,4 +49,10 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :body, :thumbnail)
   end
+
+  def search_article
+    @q = Article.ransack(params[:q])
+    @pagy, @articles = pagy(@q.result, items: 4)
+  end
+
 end

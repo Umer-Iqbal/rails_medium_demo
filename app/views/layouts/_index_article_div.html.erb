@@ -25,12 +25,14 @@
     </div>
     <div class="small-screen-article-and-image-reper mt-2 d-md-none">
       <div class="index-article">
-        <div class="small-screen-index-article-title">
-          <h2 class="small-screen-index-article-title"><%= article.title %></h2>
-        </div>
-        <div class="index-article-body-raper d-none ">
-          <p class="index-article-body"><%= article.body %></p>
-        </div>
+        <a class="index-article" target="_blank" href="<%= article_path(article) %>">
+          <div class="small-screen-index-article-title">
+            <h2 class="small-screen-index-article-title"><%= article.title %></h2>
+          </div>
+          <div class="index-article-body-raper d-none ">
+            <p class="index-article-body"><%= article.body %></p>
+          </div>
+        </a>
       </div>
       <div class="index-small-screen-article-image">
         <% if article.thumbnail.representable? %>

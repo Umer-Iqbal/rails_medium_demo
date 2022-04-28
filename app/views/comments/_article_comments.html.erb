@@ -1,0 +1,24 @@
+<div class="mt-5">
+  <h3 class="comments">comments:</h3>
+  <% @article.comments.each do |comment| %>
+    <ul class="comments">
+      <li class="login-user-image">
+        <div>
+          <%= image_tag comment.user.avatar %>
+          <span class="header-user-name">
+          <%= comment.user.username %>
+        </span>
+        </div>
+        <div class="mt-2">
+          <%= comment.body %>
+          <div class="mt-2">
+            <% if comment.user.id == current_user.id %>
+              <%= link_to "Edit", edit_article_comment_path(article_id: @article, id: comment.id) %>
+              <%= link_to "Delete", article_comment_path(article_id: @article, comment_id: comment.id), data: { turbo_method: :delete } %>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    </ul>
+  <% end %>
+</div>

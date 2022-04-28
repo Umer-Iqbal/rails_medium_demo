@@ -6,15 +6,29 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
-  def new
-    @comment = Comment.new
-  end
-
   def create
     @comment = @article.comments.new(comment_params.merge(user_id: current_user.id))
     if @comment.save
       redirect_to article_path(@article)
     end
+  end
+
+  def edit
+    @comment = @article.comments.find(params[:id])
+    render layout: "new_article"
+  end
+
+  def update
+    @comment = @article.comments.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to article_path(@article)
+    end
+  end
+
+  def destroy
+    @comment = @article.comments.find(params[:comment_id])
+    @comment.destroy
+    redirect_to article_path(@article)
   end
 
   private
