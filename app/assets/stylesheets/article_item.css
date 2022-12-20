@@ -25,6 +25,8 @@ img {
     justify-content: space-between;
     margin-left: 10px;
     position: fixed;
+    position: inherit;
+    margin-left: auto
 }
 
 .small-screen-nevegation-bar {

@@ -1,0 +1,30 @@
+<% @topics.each do |topic| %>
+  <div class="homepage-article-raper">
+    <hr>
+    <div class="article-image-reper mt-2 d-none d-md-flex">
+      <div class="index-article">
+        <a class="t-decoration" target="_blank" href="/topics/<%=topic.id%>">
+          <h2 class="index-article-title index-article-title-raper"><%= topic.title %></h2>
+          <div class="index-article-body-raper d-none d-md-block">
+            <p class="index-article-body"><%= topic.description %></p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="small-screen-article-and-image-reper mt-2 d-md-none">
+      <div class="index-article">
+        <a class="t-decoration" target="_blank" href="<%= topics_path(topic.id) %>">
+          <div class="small-screen-index-article-title">
+            <h2 class="small-screen-index-article-title"><%= topic.title %></h2>
+          </div>
+          <div class="index-article-body-raper d-none ">
+            <p class="index-article-body"><%= topic.description %></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+<% end %>
+<div class="index-pagy-nave ">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
